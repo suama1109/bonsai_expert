@@ -1,1 +1,93 @@
-Hello World
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>テキストにスタイル設定</title>
+    <!---styleはヘッダーに設定しよう！(ヘッダーが先に読み込まれる)-->
+    <style>
+        /* CSSのコメントアウトはこれ */
+        /*
+        もちろんこんな感じで
+        複数行のコメントも
+        できるよ
+        */
+        h1 {
+            font-size: 2.5em;
+            font-family: cursive;
+            color: #ff0000;
+        }
+
+        h2 {
+            font-size: 2.0em;
+            font-family: fantasy;
+            color: rgb(0, 255, 255);
+        }
+
+        p {
+            font-size: 1.2em;
+            font-family: sans-serif;
+        }
+
+        span {
+            font: bold italic 1.7em serif;
+            background-color: magenta;
+        }
+
+        h3 {
+            font-size: 200%;
+            /*
+            !importantを入れると指定したものが固定される
+            */
+            color: white !important;
+            background-color: black;
+        }
+
+        /* 
+        #id 
+        idを指定するとjavascriptを使うときに楽
+        */
+        #name {
+            color: black;
+        }
+
+        h4 {
+            background-color: black;
+        }
+        /*
+            idは#
+            classは.
+            のスタート
+        */
+        
+        .shiro {
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ここにコメントを入れてくれ！ -->
+    <h1>Hello! RRR</h1>
+    <!--
+        指定したidから情報を取ったりできる
+    -->
+    <h1 id="name">Rise Riot Revolt</h1>
+    <h2>Rise Riot Revolt</h2>
+    <p>Rise <span>Riot</span> Revolt</p>
+    <!---白文字、黒背景でフォント200%-->
+    <h3>Rise Riot Revolt</h3>
+    <!--
+    CSSに記述したとしてもタグに直接書くとそっちが優先になる
+    ↓はその例　※ただし、!importantがついている場合はそちらが優先になる
+    -->
+    <h3 style="color: #00ff00; font-size: 300%;">THE SAFARI</h3>
+    <h4>1</h4>
+    <h4 class="shiro">2</h4>
+    <h4 class="shiro">3</h4>
+    <h4>4</h4>
+</body>
+
+</html>
