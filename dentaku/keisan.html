@@ -34,7 +34,11 @@
                     result = num1 * num2;
                     break;
                 case "/":
-                    result = num1 / num2;
+                    if(num2 == 0){
+                        result = "0では割れません"
+                    }else{
+                        result = num1 / num2;
+                    }
                     break;
                 default:
                     result = "NG";
@@ -42,15 +46,31 @@
 
             document.getElementById("result").value = result;
         }
+
+        function reset() {
+            document.getElementById("num1").value = "";
+            document.getElementById("num2").value = "";
+            document.getElementById("kigo").value = "";
+            document.getElementById("result").value = "";
+        }
     </script>
 </head>
 
 <body>
-    <input id="num1" type="text">
-    <input id="kigo" type="text">
-    <input id="num2" type="text">
+    <input id="num1" type="number">
+    <!--
+        <input id="kigo" type="text">
+    -->
+    <select name="kigo">
+        <option>+</option>
+        <option>-</option>
+        <option>*</option>
+        <option>/</option>
+    </select>
+    <input id="num2" type="number">
     <button onclick="calc()"> = </button>
     <input id="result" type="text">
+    <button onclick="reset()"> クリア </button>
 
 </body>
 
